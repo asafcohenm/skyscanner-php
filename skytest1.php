@@ -25,7 +25,7 @@
 	date_default_timezone_set('ASIA/CALCUTTA');
 	// Then call the date functions
 	$outbounddate = date('Y-m-d');
-	
+	/*
 	$params = http_build_query(array
 	(
 		"currency" => 'INR',
@@ -36,8 +36,8 @@
 		"outbounddate" => $outbounddate,
 		"cabinclass" => 'Economy',
 		"adults" => 1
-	));
-/*
+	));*/
+
 	$params = http_build_query(array
 	(
 		"currency" => 'GBP',
@@ -49,7 +49,7 @@
 		"inbounddate" => '2016-12-30',
 		"cabinclass" => 'Economy',
 		"adults" => 1
-	));*/
+	));
 
 	
 	
@@ -125,7 +125,7 @@
         
 			// echo results
 			//echo "The server responded: <br />";
-			//echo $info['http_code'] . " " . $http_codes[$info['http_code']];
+			echo $info['http_code'] . " " . $http_codes[$info['http_code']];
 		}
 
 	}
@@ -163,6 +163,8 @@
 		//echo '<PRE>';
 		echo "<pre>";
 		 print_r($myarray);
+		echo "</pre>";
+
 		// foreach($myarray as $k => $v)
 		// {
 			// echo "<br>";
@@ -177,14 +179,14 @@
 		// print_r($myarray1);
 		//echo 'here'.$myarray1['PricingOptions'];
 		//Itineraries
-		foreach ($myarray['Itineraries'][0]['PricingOptions'] as $Option)
+		/*foreach ($myarray['Itineraries'][0]['PricingOptions'] as $Option)
 		{
 		
 				$pricedata= $Option['Price'];
 				array_push($arr_names,$pricedata);
               //	echo "<b> Agents </b> " .implode(',', $Option['Agents']), " <br> <b>price </b>",$Option['Price'] ,"<br />";
         	
-		}
+		}*/
 		$sending_json = json_encode($arr_names);
 		//echo $sending_json;
 	}
